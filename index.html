@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -15,9 +15,9 @@
             background-color: #f0ab4a;
         }
         img {
-            width: 300px; /* Установите нужный размер */
+            width: 300px;
             height: auto;
-             border: 5px solid black; /* Черная рамка толщиной 5px */
+            border: 5px solid black;
         }
         .message {
             margin-top: 20px;
@@ -28,23 +28,41 @@
             text-align: center;
         }
     </style>
-<!-- Yandex.RTB -->
-<script>window.yaContextCb=window.yaContextCb||[]</script>
-<script src="https://yandex.ru/ads/system/context.js" async></script>
+    <!-- Yandex.RTB -->
+    <script>window.yaContextCb = window.yaContextCb || []</script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body>
     <img src="https://iimg.su/s/04/hNhCGJJhnQ9IDIz3Jp66rkEDVgNwWyoqG0UsFet9.png" alt="Иллюстрация">
     <div class="message">Привет!:) Подождите, пожалуйста, загружаем аудиозапись!</div>
-<!-- Yandex.RTB R-A-13574264-1 -->
-<div id="yandex_rtb_R-A-13574264-1"></div>
-<script>
-window.yaContextCb.push(() => {
-    Ya.Context.AdvManager.render({
-        "blockId": "R-A-13574264-1",
-        "renderTo": "yandex_rtb_R-A-13574264-1",
-        "type": "feed"
-    })
-})
-</script>
+    <!-- Yandex.RTB R-A-13574264-1 -->
+    <div id="yandex_rtb_R-A-13574264-1"></div>
+    <script>
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                "blockId": "R-A-13574264-1",
+                "renderTo": "yandex_rtb_R-A-13574264-1",
+                "type": "feed"
+            });
+        });
+
+        // Получение параметра audio из URL
+        const params = new URLSearchParams(window.location.search);
+        const audioId = params.get("audio");
+
+        // Карта аудиофайлов с уникальными ID
+        const audioMap = {
+            "111": "https://zvukipro.com/uploads/files/2024-02/1708863785_3e1.mp3",
+            "456": "https://zvukipro.com/uploads/files/2024-02/anotherfile.mp3"
+        };
+
+        // Ссылка на аудиофайл или на страницу с ошибкой
+        const audioUrl = audioMap[audioId] || "https://kobr1111.github.io/ToyTouch/error.html";
+
+        // Перенаправление через 5 секунд
+        setTimeout(() => {
+            window.location.href = audioUrl;
+        }, 5000); // 5 секунд ожидания
+    </script>
 </body>
 </html>
