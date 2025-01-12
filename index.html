@@ -1,66 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Привет! Загружаем аудиозапись</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f0ab4a;
-        }
-        img {
-            width: 300px;
-            height: auto;
-            border: 5px solid black;
-        }
-        .message {
-            margin-top: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #480607;
-            text-shadow: 1px 1px 2px black;
-            text-align: center;
-        }
-    </style>
-    <!-- Yandex.RTB -->
-    <script>window.yaContextCb = window.yaContextCb || []</script>
-    <script src="https://yandex.ru/ads/system/context.js" async></script>
+    <title>Document</title>
 </head>
 <body>
-    <img src="https://iimg.su/s/04/hNhCGJJhnQ9IDIz3Jp66rkEDVgNwWyoqG0UsFet9.png">
-    <div class="message">Привет!:)Подождите, пожалуйста, загружаем аудиозапись!</div>
-    <!-- Yandex.RTB R-A-13574264-1 -->
-    <div id="yandex_rtb_R-A-13574264-1"></div>
-    <script>
-        (function() {
-            const decodeUrl = (encoded) => atob(encoded);
-            const audioMap = {
-                "111": decodeUrl("aHR0cHM6Ly96dnVraXByby5jb20vdXBsb2Fkcy9maWxlcy8yMDI0LTAyLzE3MDg4NjM3ODVfM2UxLm1wMw=="),
-                "456": decodeUrl("aHR0cHM6Ly96dnVraXByby5jb20vdXBsb2Fkcy9maWxlcy8yMDI0LTAyL2Fub3RoZXJmaWxlLm1wMw==")
-            };
 
-            const params = new URLSearchParams(window.location.search);
-            const audioId = params.get("audio");
-            const audioUrl = audioMap[audioId] || "https://kobr1111.github.io/ToyTouch/error.html";
-
-            setTimeout(() => {
-                window.location.href = audioUrl;
-            }, 4000);
-
-            window.yaContextCb.push(() => {
-                Ya.Context.AdvManager.render({
-                    "blockId": "R-A-13574264-1",
-                    "renderTo": "yandex_rtb_R-A-13574264-1",
-                    "type": "feed"
-                });
-            });
-        })();
-    </script>
 </body>
 </html>
